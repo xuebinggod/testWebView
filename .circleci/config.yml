@@ -20,5 +20,12 @@ jobs:
     working_directory: /go/src/github.com/xuebinggod/testWebView
     steps:
       - checkout
+      - setup_remote_docker
+          - run:
+          name: Install dependencies
 
+        # Fetches the base64 encoded service key content, decodes it into a file again.
+        # Then sets the gcloud project name from the environment variables we set above.
+        # Then we set the cluster name, the compute region/zone, then fetch the credentials.
+          command: go build
       # specify any bash command here prefixed with `run: `
